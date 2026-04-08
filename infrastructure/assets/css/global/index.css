@@ -2,6 +2,38 @@ body{
     background-color: #5ab674;
 }
 
+header{
+    background-color: lightgreen;
+    border: 3px solid rgb(0, 0, 0);
+    margin: auto;
+}
+
+main{
+    background-color: lightseagreen;
+    border: 3px solid rgb(0, 0, 0);
+    outline:  3px solid white;
+    margin: 10px 5px;
+}
+
+section{
+    background-color: green;
+    border: 2px solid lightblue;
+    margin: 10px 5px;
+}
+
+article{
+    background-color: lightgreen;
+    border: 2px solid darkblue;
+    margin: 3px 2px;
+}
+
+footer{
+    background-color: darkgreen;
+    border: 2px solid rgb(0, 0, 0);
+    margin: auto;
+}
+
 h1{
-    color: blue;
+    
+    color: rgb(111, 0, 255);
 }
