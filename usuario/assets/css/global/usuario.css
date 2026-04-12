@@ -18,6 +18,10 @@ iframe {
     max-width: 100%;
 }
 
+button {
+    transition: all 0.2s ease;
+}
+
 nav#menu {
     display: inline-block;
     background-color: antiquewhite;
@@ -33,7 +37,7 @@ nav#menu ul {
     list-style: none;
     text-transform: uppercase;
     display: flex;
-    flex-direction: line;
+    flex-direction: column;
     align-items: center;
     gap: 15px;
     padding: 0;
@@ -59,23 +63,28 @@ header h1{
         text-align: center;
 }
 
-main{
+thead{
+    background-color: burlywood;
+}
+
+td{
+    background-color: white;
+}
+
+main {
     background-color: lightseagreen;
     border: 3px solid rgb(0, 0, 0);
-    outline:  3px solid white;
-    margin: 10px 5px;
+    outline: 3px solid white;
+
+    width: 400px;
+    margin: 20px auto;
+    padding: 20px;
 }
 
 section{
     background-color: green;
     border: 2px solid lightblue;
     margin: 10px 5px;
-}
-
-article{
-    background-color: lightgreen;
-    border: 2px solid darkblue;
-    margin: 3px 2px;
 }
 
 footer{
@@ -86,5 +95,5 @@ footer{
 
 h1{
     
-    color: rgb(111, 0, 255);
+    color: black;
 }
