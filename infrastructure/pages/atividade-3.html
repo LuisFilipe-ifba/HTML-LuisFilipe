@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/png" href="../assets/images/terno.png">
         <title>PROG-4 PRIMEIRO EXEMPLO</title>
+        <link rel="stylesheet" href="../assets/css/global/index.css">
     </head>
     <body>
         <h1>links e listas!</h1>
@@ -26,8 +27,9 @@
             testando imagens dinamicas
         </p>
         <picture>
-            <img src="../assets/images/hakerman.jpg" alt="imagem">
-            <source media="(max-width: 600px)" srcset="hakerman.jpeg" type="image/jpeg">
+            <source media="(max-width: 600px)" srcset="../assets/images/hakerman.jpg">
+            <source media="(min-width: 1000px)" srcset="../assets/images/hakerman_big.jpg">
+            <img src="../assets/images/hakerman.jpg" alt="imagem dinâmica">
         </picture>
     </body>
 </html>
