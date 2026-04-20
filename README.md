@@ -16,14 +16,18 @@ A estrutura desse projeto segue a estrutura proposta no slide da aula03:
 │       ├── 📂 contact
 │       └── 📄 index.html  # página principal (até agora)
 │
-└── 📂 usuario
-    ├── 📂 assets
-    │   ├── 📂 css
-    │   │   └── 📂 global
-    │   ├── 📂 fonts
-    │   ├── 📂 images
-    │   └── 📂 js
-    │
-    └── 📂 pages
-        └── 📂 components
+├── 📂 usuario
+│   ├── 📂 assets
+│   │   ├── 📂 css
+│   │   │   └── 📂 global
+│   │   ├── 📂 fonts
+│   │   ├── 📂 images
+│   │   └── 📂 js
+│   │
+│   └── 📂 pages
+│       └── 📂 components
+│
+└──📂 bootstrap
+    ├──📂 css
+    └──📂 js
 ```
