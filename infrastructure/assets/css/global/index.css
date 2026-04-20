@@ -1,4 +1,4 @@
-@media (max-width: 600px) and (orientation: landscape) {
+/* @media (max-width: 600px) and (orientation: landscape) {
     body {
         background-color: #5ab674;
         font-size: 14px;
@@ -20,7 +20,7 @@
 
 @media (min-width: 601px) and (max-width: 1024px) {
     body {
-        background-color: lightblue;
+        background-color: lightyellow;
         font-size: 16px;
     }
 
@@ -40,7 +40,7 @@
 
 @media (min-width: 1025px) {
     body {
-        background-color: lightgray;
+        background-color: rgb(144, 238, 144);
         font-size: 18px;
     }
 
@@ -57,7 +57,13 @@
         margin: auto;
     }
 }
+-->*/
 
+header {
+        background-color: lightgreen;
+        border: 3px solid rgb(0, 0, 0);
+        margin: auto;
+    }
 
 img {
     max-width: 100%;
@@ -105,7 +111,7 @@ nav#menu a:hover {
 
 
 main{
-    background-color: lightseagreen;
+    background-color: lightgreen;
     border: 3px solid rgb(0, 0, 0);
     outline:  3px solid white;
     margin: 10px 5px;
@@ -113,13 +119,13 @@ main{
 
 section{
     background-color: green;
-    border: 2px solid lightblue;
+    border: 2px solid lightgoldenrodyellow;
     margin: 10px 5px;
 }
 
 article{
-    background-color: lightgreen;
-    border: 2px solid darkblue;
+    background-color: rgb(255, 255, 119);
+    border: 2px solid black;
     margin: 3px 2px;
 }
 
@@ -131,5 +137,5 @@ footer{
 
 h1{
     
-    color: rgb(111, 0, 255);
+    color: white;
 }
