@@ -1,0 +1,156 @@
+/* @media (max-width: 600px) and (orientation: landscape) {
+    body {
+        background-color: #5ab674;
+        font-size: 14px;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    header {
+        background-color: lightgreen;
+        border: 3px solid rgb(0, 0, 0);
+        margin: auto;
+    }
+
+    header h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    body {
+        background-color: lightyellow;
+        font-size: 16px;
+    }
+
+    header h1 {
+        font-size: 26px;
+    }
+
+    nav#menu ul {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    main {
+        margin: 20px;
+    }
+}
+
+@media (min-width: 1025px) {
+    body {
+        background-color: rgb(144, 238, 144);
+        font-size: 18px;
+    }
+
+    header h1 {
+        font-size: 32px;
+    }
+
+    nav#menu ul {
+        justify-content: space-between;
+    }
+
+    main {
+        max-width: 1200px;
+        margin: auto;
+    }
+}
+-->*/
+
+header {
+        background-color: lightgreen;
+        border: 3px solid rgb(0, 0, 0);
+        margin: auto;
+    }
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+iframe {
+    height: 200px;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+
+nav#menu {
+    display: inline-block;
+    background-color: antiquewhite;
+    padding: 10px;
+    margin: 10px 5px;
+    border: 2px solid black;
+    
+}
+
+nav#menu h1 {
+    display: none;
+}
+
+nav#menu ul {
+    list-style: none;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: line;
+    align-items: center;
+    gap: 15px;
+    padding: 0;
+}
+
+nav#menu a {
+    text-decoration: none;
+    color: black;
+}
+
+nav#menu a:hover {
+    color: red;
+}
+
+div#row{
+    background-color: rgb(245, 177, 89);
+    padding: 8px;
+    margin: 2px;
+    border: 2px solid black;
+}
+
+div#col{
+    background-color: rgb(235, 212, 182);
+    padding: 8px;
+    margin: 1px;
+    border: 2px solid black;
+    
+}
+
+main{
+    background-color: lightgreen;
+    border: 3px solid rgb(0, 0, 0);
+    outline:  3px solid white;
+    margin: 10px 5px;
+}
+
+section{
+    background-color: green;
+    border: 2px solid lightgoldenrodyellow;
+    margin: 10px 5px;
+}
+
+article{
+    background-color: rgb(255, 255, 119);
+    border: 2px solid black;
+    margin: 3px 2px;
+}
+
+footer{
+    background-color: darkgreen;
+    border: 2px solid rgb(0, 0, 0);
+    margin: auto;
+}
+
+h1{
+    
+    color: white;
+}

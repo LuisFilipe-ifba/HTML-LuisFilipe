@@ -1,0 +1,59 @@
+body{
+    background-color: lightgreen;
+
+}
+
+header{
+    background-color: lightgreen;
+    border: 3px solid rgb(0, 0, 0);
+    margin: auto;
+}
+
+nav{
+    background-color: green;
+    padding: 20px;
+    border: 2px solid black;
+    margin: 20px;
+}
+
+div#row{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 10px;
+}
+
+div#col{
+    flex: 1;
+    min-width: 200px;
+    background-color: rgb(3, 192, 160);
+    padding: 10px;
+    border: 2px solid black;
+}
+
+div#col:hover{
+    background-color: yellow;
+    transition: background-color 0.3s ease;
+}
+
+footer{
+    background-color: ;
+    border: 3px solid rgb(0, 0, 0);
+    margin: auto;
+}
+
+header h1 {
+    text-align: center;
+}
+
+footer ol li{
+    background-color: #686e2f;
+    padding: 20px;
+    border: 2px solid black;
+    margin: 20px 20px;
+}
+footer ol li:hover{
+    background-color: #a3e40d;
+    color: #000 !important;
+    transition: background-color 0.3s ease;
+}
