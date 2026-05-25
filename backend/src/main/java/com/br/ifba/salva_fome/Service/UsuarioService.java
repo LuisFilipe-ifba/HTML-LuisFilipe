@@ -13,21 +13,33 @@ public class UsuarioService {
 
     private final UsuarioRepository usuarioRepository;
 
+    private final ObjectMapper objectMapper; //Para o mapeamento entre DTO e entidade
+
     // 1. Salvar
-    public Usuario salvar(Usuario usuario) {
-        return usuarioRepository.save(usuario);
+    public UsuarioResponseDTO salvar(UsuarioRequestDTO dto) {
+
+        Usuario usuario = objectMapper.convertValue(dto, Usuario.class); //Converte o DTO para a entidade Usuario
+
+        Usuario usuarioSalvo = usuarioRepository.save(usuario); //Salva a entidade no banco de dados
+
+        return objectMapper.convertValue(usuarioSalvo, UsuarioResponseDTO.class);//Converte a entidade salva de volta para o DTO de resposta
     }
 
+
     // 2. Listar Todos
-    public List<Usuario> listarTodos() {
-        return usuarioRepository.findAll();
+    public List<UsuarioResponseDTO> listarTodos() {
+
+        return usuarioRepository.findAll().stream().map(usuario -> objectMapper.convertValue(usuario, UsuarioResponseDTO.class)).collect(Collectors.toList());
+        // Busca todos os usuários no banco de dados, converte cada entidade para o DTO de resposta e retorna a lista de DTOs
     }
 
     // 3. Pesquisar por Nome
-    public List<String> pesquisarPorNome(String nome) {
-        // Retorna uma lista se encontrar trechos do nome informado
-        return usuarioRepository.findByNomeContainingIgnoreCase(nome);
+    public List<UsuarioResponseDTO> pesquisarPorNome(String nome) {
+
+        return usuarioRepository.findByNomeContainingIgnoreCase(nome).stream().map(usuario -> objectMapper.convertValue(usuario, UsuarioResponseDTO.class)).collect(Collectors.toList());
+        // Busca os usuários cujo nome contém a string fornecida (ignorando maiúsculas/minúsculas), converte cada entidade para o DTO de resposta e retorna a lista de DTOs
     }
+}
 
     // 4. Editar
     public Usuario editar(Long id, Usuario usuarioAtualizado) {

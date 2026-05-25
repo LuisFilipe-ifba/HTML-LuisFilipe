@@ -19,24 +19,31 @@ public class UsuarioController {
 
     // 1. Salvar (POST) -> Retorna 201 Created
     @PostMapping
-    public ResponseEntity<Usuario> salvar(@RequestBody Usuario usuario) {
-        Usuario novoUsuario = usuarioService.salvar(usuario);
-        return ResponseEntity.status(HttpStatus.CREATED).body(novoUsuario);
+    public ResponseEntity<UsuarioResponseDTO> salvar(
+            @RequestBody UsuarioRequestDTO dto) {
+
+        UsuarioResponseDTO usuario = usuarioService.salvar(dto);
+
+        return ResponseEntity
+                .status(HttpStatus.CREATED)
+                .body(usuario);
     }
 
     // 2. Listar Todos (GET) -> Retorna 200 OK
     @GetMapping
-    public ResponseEntity<List<Usuario>> listarTodos() {
-        List<Usuario> usuarios = usuarioService.listarTodos();
-        return ResponseEntity.ok(usuarios);
+    public ResponseEntity<List<UsuarioResponseDTO>> listarTodos() {
+
+        return ResponseEntity.ok(usuarioService.listarTodos());
     }
 
     // 3. Pesquisar por Nome (GET) -> Ex: /api/usuarios/pesquisa?nome=Luis
     @GetMapping("/pesquisa")
-    public ResponseEntity<List<Usuario>> pesquisarPorNome(@RequestParam String nome) {
-        List<Usuario> usuarios = usuarioService.pesquisarPorNome(nome);
-        return ResponseEntity.ok(usuarios);
+    public ResponseEntity<List<UsuarioResponseDTO>> pesquisarPorNome(
+            @RequestParam String nome) {
+
+        return ResponseEntity.ok(usuarioService.pesquisarPorNome(nome));
     }
+}
 
     // 4. Editar (PUT) -> Retorna 200 OK
     @PutMapping("/{id}")
