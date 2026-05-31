@@ -1,11 +1,18 @@
 package com.br.ifba.salva_fome.Model;
 
-import com.google.cloud.firestore.annotation.Exclude;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Data
+import jakarta.persistence.*;
+
+@Getter
+@Setter
+@Builder
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "tb_usuarios")
 public class Usuario {
@@ -14,7 +21,14 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false)
     private String nome;
+
+    @Column(nullable = false, unique = true)
     private String email;
+
+    @Column(nullable = false)
     private String senha;
 }
+
+
