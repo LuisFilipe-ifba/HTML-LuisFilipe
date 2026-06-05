@@ -1,4 +1,4 @@
-package com.br.ifba.salva_fome.Model;
+package com.br.ifba.salva_fome.Usuario.Model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

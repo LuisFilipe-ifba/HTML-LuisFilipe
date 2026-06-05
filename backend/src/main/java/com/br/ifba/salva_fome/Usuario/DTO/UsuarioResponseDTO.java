@@ -1,4 +1,4 @@
-package com.br.ifba.salva_fome.DTO;
+package com.br.ifba.salva_fome.Usuario.DTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

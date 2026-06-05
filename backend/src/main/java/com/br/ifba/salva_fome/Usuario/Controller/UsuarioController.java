@@ -1,12 +1,15 @@
-package com.br.ifba.salva_fome.Controller;
+package com.br.ifba.salva_fome.Usuario.Controller;
 
-import com.br.ifba.salva_fome.DTO.UsuarioRequestDTO;
-import com.br.ifba.salva_fome.DTO.UsuarioResponseDTO;
-import com.br.ifba.salva_fome.Model.Usuario;
-import com.br.ifba.salva_fome.Service.UsuarioService;
+import com.br.ifba.salva_fome.Usuario.DTO.UsuarioRequestDTO;
+import com.br.ifba.salva_fome.Usuario.DTO.UsuarioResponseDTO;
+import com.br.ifba.salva_fome.Usuario.Model.Usuario;
+import com.br.ifba.salva_fome.Usuario.Service.UsuarioService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,10 +29,15 @@ public class UsuarioController {
 
     // 1. Salvar (POST) -> Retorna 201 Created
     @PostMapping
-    public ResponseEntity<UsuarioResponseDTO> salvar(@RequestBody @Valid UsuarioRequestDTO dto) {
+    public ResponseEntity<UsuarioResponseDTO> salvar(
+            @RequestBody @Valid UsuarioRequestDTO dto) {
 
         Usuario usuario = usuarioService.salvar(objectMapper.convertValue(dto, Usuario.class));
-        UsuarioResponseDTO resposta = objectMapper.convertValue(usuario, UsuarioResponseDTO.class);
+
+        UsuarioResponseDTO resposta = new UsuarioResponseDTO(
+                usuario.getNome(),
+                usuario.getEmail()
+        );
 
         return ResponseEntity
                 .status(HttpStatus.CREATED)
@@ -42,7 +50,10 @@ public class UsuarioController {
 
         List<UsuarioResponseDTO> usuariosDTOs = usuarioService.listarTodos()
                 .stream()
-                .map(usuario -> objectMapper.convertValue(usuario, UsuarioResponseDTO.class))
+                .map(usuario -> new UsuarioResponseDTO(
+                        usuario.getNome(),
+                        usuario.getEmail()
+                ))
                 .collect(Collectors.toList());
 
         return ResponseEntity.ok(usuariosDTOs);
@@ -79,4 +90,20 @@ public class UsuarioController {
 
         return ResponseEntity.noContent().build();
     }
+
+    //6. findAll
+    @GetMapping(path = "/findAll", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Page<UsuarioResponseDTO>> findAll(Pageable pageable) {
+        Page<Usuario> usuariosPage = usuarioService.findAll(pageable);
+
+        Page<UsuarioResponseDTO> usuariosDTOsPage =
+                usuariosPage.map(usuario ->
+                        new UsuarioResponseDTO(
+                                usuario.getNome(),
+                                usuario.getEmail()
+                        ));
+
+        return ResponseEntity.ok(usuariosDTOsPage);
+    }
+
 }

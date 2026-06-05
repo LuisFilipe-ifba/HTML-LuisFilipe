@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
   return (
@@ -6,19 +7,19 @@ export default function Navbar() {
       <div className="container">
         <div className="row" id="row">
           <div className="col-12 col-md-6 col-lg-3" id="col">
-            <a href="../../usuario/pages/usuarios_login.html">Login</a>
+            <Link to="/login">Login</Link>
           </div>
           <div className="col-12 col-md-6 col-lg-3" id="col">
-            <a href="../pages/index.html">home(index)</a>
+            <Link to="/">Home</Link>
           </div>
           <div className="col-12 col-md-6 col-lg-3" id="col">
-            <a href="../pages/atividade-3.html">atividade-3</a>
+            <a href="../pages/atividade-3.html">Atividade-3</a>
           </div>
           <div className="col-12 col-md-6 col-lg-3" id="col">
-            <a href="../pages/atividade-5.html">atividade-5</a>
+            <a href="../pages/atividade-5.html">Atividade-5</a>
           </div>
           <div className="col-12 col-md-6 col-lg-3" id="col">
-            <a href="../../usuario/pages/lista_usuario.html">lista de usuarios</a>
+            <Link to="/usuarios">Lista de Usuários</Link>
           </div>
         </div>
       </div>

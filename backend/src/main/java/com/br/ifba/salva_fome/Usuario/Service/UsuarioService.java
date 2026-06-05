@@ -1,8 +1,10 @@
-package com.br.ifba.salva_fome.Service;
+package com.br.ifba.salva_fome.Usuario.Service;
 
-import com.br.ifba.salva_fome.Repository.UsuarioRepository;
-import com.br.ifba.salva_fome.Model.Usuario;
+import com.br.ifba.salva_fome.Usuario.Repository.UsuarioRepository;
+import com.br.ifba.salva_fome.Usuario.Model.Usuario;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -52,5 +54,10 @@ public class UsuarioService {
         }
 
         usuarioRepository.deleteById(id);
+    }
+
+    //6. findAll
+    public Page<Usuario> findAll(Pageable pageable) {
+        return usuarioRepository.findAll(pageable);
     }
 }
